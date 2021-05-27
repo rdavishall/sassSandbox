@@ -1,0 +1,17 @@
+// Set Text Color
+
+// $color is for background color
+@function set-text-color($background) {
+  @if(lightness($background) > 50){
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
+
+// Transform Mix-in (simplifies the three lines of code to one for main.scss)
+@mixin transform($property) {
+  --webkit-transform: $property;
+  -ms-transform: $property;
+  transform: $property;
+}
